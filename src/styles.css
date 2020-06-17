@@ -48,10 +48,46 @@ li a:hover:not(.active) {
 }
 
 .card-container {
+  grid-area: main;
+}
+
+.card-container {
   display: grid;
+  grid-template-areas: "img cardcontent";
   min-height: 100vh;
 }
 
 .card-container > div {
   background-color: white;
+  padding: 20px 20px;
+}
+
+.img-container {
+  grid-area: img;
+}
+
+.item-img {
+  width: 50vh;
+}
+
+.product-container {
+  grid-area: cardcontent;
+}
+
+.product-container > h2 {
+  line-height: 1em;
+}
+
+.product-item {
+  margin: 20px 0;
+}
+
+.product-item > button {
+  width: 10em;
+  padding: 4px;
+  letter-spacing: 0.1em;
+  font-weight: bolder;
+  color: white;
+  font-size: medium;
+  background: #00b372;
 }
