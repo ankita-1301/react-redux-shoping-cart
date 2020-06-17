@@ -143,3 +143,43 @@ hr {
 h4 {
   margin-bottom: 10px;
 }
+/* Extra large devices (large laptops and desktops) */
+@media screen and (max-width: 1024px) {
+  .card-container {
+    grid-template-areas:
+      "img cardcontent"
+      "img cart";
+  }
+
+  .item-img {
+    width: 25vh;
+  }
+}
+
+/* For tablets: */
+@media screen and (max-width: 900px) {
+  .card-container {
+    grid-template-areas: "img" "cardcontent" "cart";
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 768px) and (min-height: 1024px) {
+  .grid-container {
+    padding: 0;
+  }
+  .card-container {
+    grid-template-areas:
+      "img cardcontent"
+      "img cart";
+  }
+}
+
+@media screen and (max-width: 360px) and (min-height: 640px) {
+  .grid-container {
+    padding: 0;
+  }
+  .card-container {
+    grid-template-areas: "img" "cardcontent" "cart";
+  }
+}

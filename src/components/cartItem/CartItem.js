@@ -5,6 +5,9 @@ const CartItem = ({ price, quantity, title, onremoveFromCartClicked }) => (
   <div>
     {title} - &#36;{price}
     {quantity ? ` x ${quantity}` : null}
+    <button className="remove-button" onClick={onremoveFromCartClicked}>
+      Remove
+    </button>
     <hr />
   </div>
 );

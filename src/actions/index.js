@@ -38,3 +38,29 @@ export const addToCart = (productId) => (dispatch, getState) => {
     }
   }
 };
+
+//remove a product from cart
+const removeFromCartUnsafe = (productId, inventory) => ({
+  type: types.REMOVE_FROM_CART,
+  productId,
+  inventory,
+});
+
+export const removeFromCart = (productId, inventory) => (dispatch) => {
+  dispatch(removeFromCartUnsafe(productId, inventory));
+};
+
+//checkout once the products are added to cart
+export const checkout = (products) => (dispatch, getState) => {
+  const { cart } = getState();
+
+  dispatch({
+    type: types.CHECKOUT_REQUEST,
+  });
+  shop.buyProducts(products, () => {
+    dispatch({
+      type: types.CHECKOUT_SUCCESS,
+      cart,
+    });
+  });
+};
