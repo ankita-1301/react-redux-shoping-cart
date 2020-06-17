@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import CartProduct from "../cartProduct/CartItem";
+import CartProduct from "../cartItem/CartItem";
+import { removeFromCart } from "../../actions";
 
-const Cart = ({ products, total, onCheckoutClicked }) => {
+const Cart = ({ products, total, onCheckoutClicked, removeFromCart }) => {
   const hasProducts = products.length > 0;
   const nodes = hasProducts ? (
     products.map((product) => (
@@ -12,6 +13,9 @@ const Cart = ({ products, total, onCheckoutClicked }) => {
         price={product.price}
         quantity={product.quantity}
         key={product.sku}
+        onremoveFromCartClicked={() =>
+          removeFromCart(product.sku, product.quantity)
+        }
       />
     ))
   ) : (
@@ -23,6 +27,14 @@ const Cart = ({ products, total, onCheckoutClicked }) => {
       <h3>Your Cart</h3>
       <div>{nodes}</div>
       <p>Total: &#36;{total}</p>
+      <button
+        className="app-button"
+        style={{ background: total > 0 ? "#00b372" : "#ed3f00" }}
+        onClick={onCheckoutClicked}
+        disabled={hasProducts ? "" : "disabled"}
+      >
+        Checkout
+      </button>
     </div>
   );
 };
@@ -38,4 +50,4 @@ const mapStateToProps = () => ({
   // products: getVisibleProducts(state.products),
 });
 
-export default connect(mapStateToProps, {})(Cart);
+export default connect(mapStateToProps, { removeFromCart })(Cart);
