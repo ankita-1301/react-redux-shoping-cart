@@ -1,12 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import { checkout } from "../actions";
 import { getTotal, getCartProducts } from "../reducers";
 import Cart from "../components/cart/Cart";
 
-const CartContainer = ({ products, total }) => (
+const CartContainer = ({ products, total, checkout }) => (
   <div className="cart-container">
-    <Cart products={products} total={total} />
+    <Cart
+      products={products}
+      total={total}
+      onCheckoutClicked={() => checkout(products)}
+    />
   </div>
 );
 
@@ -20,6 +25,7 @@ CartContainer.propTypes = {
     })
   ).isRequired,
   total: PropTypes.string,
+  checkout: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
@@ -27,4 +33,4 @@ const mapStateToProps = (state) => ({
   total: getTotal(state),
 });
 
-export default connect(mapStateToProps, {})(CartContainer);
+export default connect(mapStateToProps, { checkout })(CartContainer);
