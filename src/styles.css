@@ -53,7 +53,7 @@ li a:hover:not(.active) {
 
 .card-container {
   display: grid;
-  grid-template-areas: "img cardcontent";
+  grid-template-areas: "img cardcontent cart";
   min-height: 100vh;
 }
 
@@ -90,4 +90,56 @@ li a:hover:not(.active) {
   color: white;
   font-size: medium;
   background: #00b372;
+}
+
+.cart-container {
+  grid-area: cart;
+  background: #fcf6f8 !important;
+}
+
+.app-button {
+  width: 10em;
+  padding: 4px;
+  letter-spacing: 0.1em;
+  font-weight: bolder;
+  color: white;
+  font-size: medium;
+  background: #00b372;
+}
+
+.remove-button {
+  padding: 4px;
+  letter-spacing: 0.1em;
+  font-weight: bolder;
+  color: white;
+  font-size: medium;
+  background: #00b372;
+  margin-left: 5px;
+}
+
+.card-content {
+  text-align: left !important;
+}
+
+.card-container > p {
+  font-size: 5px !important;
+}
+
+.cart {
+  text-align: left !important;
+}
+
+.cart-items {
+  background: #ffc10759;
+  box-shadow: 0px 0px 2px #717171 !important;
+  padding: 10px;
+  width: 50%;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+}
+
+h4 {
+  margin-bottom: 10px;
 }
