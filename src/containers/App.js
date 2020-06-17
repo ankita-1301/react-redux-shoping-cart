@@ -1,7 +1,8 @@
 import React from "react";
 import "../styles.css";
 import NavBar from "../components/navbar/NavBar";
-import ProductsContainer from "../containers/ProductsContainer";
+import ProductsContainer from "./ProductsContainer";
+import CartContainer from "./CartContainer";
 
 const App = () => (
   <div className="App">
@@ -16,6 +17,7 @@ const App = () => (
           ></img>
         </div>
         <ProductsContainer />
+        <CartContainer />
       </div>
     </div>
   </div>
