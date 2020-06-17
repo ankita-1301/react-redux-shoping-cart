@@ -1,0 +1,57 @@
+html,
+body {
+  background-color: #ffffffe1;
+  font-family: "Source Sans Pro", "Trebuchet MS", "Helvetica", "sans-serif";
+  line-height: 1em;
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  background-color: #dad2cf;
+  padding: 0 10%;
+  color: #111;
+}
+
+.navBar {
+  grid-area: header;
+  padding: 0 !important;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: black;
+}
+
+.card-container {
+  display: grid;
+  min-height: 100vh;
+}
+
+.card-container > div {
+  background-color: white;
+}
