@@ -8,6 +8,8 @@ In the project directory, you can run:
 
 #### `cd react-redux-shopping-cart`
 
+#### `yarn install`
+
 #### `yarn start`
 
 Runs the app in the development mode.
